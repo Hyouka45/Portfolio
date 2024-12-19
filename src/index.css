@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  html {
+    font-family: "Raleway", sans-serif;
+  }
+
+}
+@layer utilities{
+  .card-wapper{
+    @apply overflow-hidden ;
+
+
+  }
+  .card-wapper::before{
+    background-image: conic-gradient(#ff4545,#00ff99,#006aff,#ff0095,#ff4545);
+    @apply absolute  h-40 w-40  content-[''] animate-boder-spin hover:opacity-[1];
+    filter:blur(1.4rem);
+    opacity:1;
+  }
+  .card-wapper::after{
+    background-image: conic-gradient(#ff4545,#00ff99,#006aff,#ff0095,#ff4545);
+    @apply absolute  h-40 w-40  content-[''] animate-boder-spin hover:opacity-[1];
+    filter:blur(1.4rem);
+    opacity:1;
+  }
+  .sizeinc{
+    @apply p-[4px];
+  }
+ 
+}
