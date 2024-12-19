@@ -31,26 +31,23 @@ function App() {
       rotate: "-405deg",
       scale: 0,
       duration: 1,
+      onComplete: () => {
+        setLoading(false); // Set loading to false when the animation completes
+      },
     });
     tl.to(".wapper", {
       opacity: 0,
-      duration: 0.5, // Smoothly fade out the loader
-      onComplete: () => {
-        setTimeout(() => {
-          setLoading(false); // Delay hiding the loader to ensure smooth transition
-        }, 300); // Small buffer to avoid the blank page effect
-      },
+      display: "none",
+    
     });
   }, []);
 
   return (
     <>
       {loading ? (
-        <div className="loader-wrapper">
-          <Loader />
-        </div>
+        <Loader /> // Show the loader if loading is true
       ) : (
-        <div className="app-wrapper">
+        <div>
           <NavBar />
           <Home />
           <SocialLink />
